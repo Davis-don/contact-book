@@ -1,0 +1,130 @@
+// import React from 'react'
+// import 'bootstrap/dist/css/bootstrap.min.css'
+// import './Addcontact.css'
+// import useContactStore from '../../Store/Contactstore'
+// import { useState } from 'react'
+
+// function Addcontact() {
+//  const addContact= useContactStore((state)=>state.addContact);
+//   const [data,setData]=useState({
+//     id:Math.trunc(Math.random() * 1000000),
+//     fName:'',
+//     lName:'',
+//     emailAdress:'',
+//     phoneNumber:'',
+//     active:false
+//   })
+  
+//   let handleUpdate = (e)=>{
+//   setData({
+//     ...data,[e.target.name]:e.target.value
+//   })
+//   }
+
+// let handleSubmit=(e)=>{
+// e.preventDefault();
+// addContact(data);
+
+// }
+
+//   return (
+//     <div className='overall-input-form-container'>
+        
+//         <form onSubmit={handleSubmit}>
+//         <h1 style={{textAlign:'center'}} className='text-light'>Save to contact</h1>
+//         <input onChange={handleUpdate} name='fName'  placeholder='First Name' type='text' className='form-control input-field'/>
+//         <input onChange={handleUpdate} name='lName' placeholder='Last Name' type='text' className='form-control input-field'/>
+//         <input onChange={handleUpdate} name='emailAdress' placeholder='Email ' type='email' className='form-control input-field'/>
+//         <input onChange={handleUpdate} name='phoneNumber' placeholder='phone' type='number' className='form-control input-field'/>
+
+//         <div className="btn-container">
+//         <button type='submit'  className='btn  bg-success'>Save</button>
+//         </div>
+        
+//         </form>
+//         </div>
+//   )
+// }
+
+// export default Addcontact
+
+
+import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './Addcontact.css';
+import useContactStore from '../../Store/Contactstore';
+import { useState } from 'react';
+
+function Addcontact() {
+  const addContact = useContactStore((state) => state.addContact);
+  const [data, setData] = useState({
+    id: Math.trunc(Math.random() * 1000000),
+    fName: '',
+    lName: '',
+    emailAdress: '',
+    phoneNumber: '',
+    active: false,
+  });
+
+  let handleUpdate = (e) => {
+    setData({
+      ...data,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  let handleSubmit = (e) => {
+    e.preventDefault();
+    addContact(data);
+  };
+
+  return (
+    <div className='overall-input-form-container'>
+      <form onSubmit={handleSubmit}>
+        <h1 style={{ textAlign: 'center' }} className='text-light'>
+          Save to contact
+        </h1>
+        <input
+          onChange={handleUpdate}
+          name='fName'
+          placeholder='First Name'
+          type='text'
+          className='form-control input-field'
+          required
+        />
+        <input
+          onChange={handleUpdate}
+          name='lName'
+          placeholder='Last Name'
+          type='text'
+          className='form-control input-field'
+          required
+        />
+        <input
+          onChange={handleUpdate}
+          name='emailAdress'
+          placeholder='Email'
+          type='email'
+          className='form-control input-field'
+          required
+        />
+        <input
+          onChange={handleUpdate}
+          name='phoneNumber'
+          placeholder='Phone'
+          type='number'
+          className='form-control input-field'
+          required
+        />
+
+        <div className="btn-container">
+          <button type='submit' className='btn bg-success'>
+            Save
+          </button>
+        </div>
+      </form>
+    </div>
+  );
+}
+
+export default Addcontact;

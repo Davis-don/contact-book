@@ -1,0 +1,138 @@
+/* Start of big screen */
+.overall-homepage-section-big-screen{
+width:100vw;
+height:100vh;
+position:relative;
+display: flex;
+flex-direction: row;
+gap:1rem;
+}
+
+@media screen and (max-width:26.25em) {
+ .overall-homepage-section-big-screen{
+display: none;
+ }
+}
+
+.homepage-left{
+width: 50rem;
+height: 100%;
+background-color: black;
+padding: 2rem;
+position:relative;
+}
+@media screen and (max-width:31.25em) {
+    .homepage-left{
+        width: 50vw;
+        height: 100%;
+        background-color: black;
+        padding: 2rem;
+        position:relative;
+        }
+}
+@media screen and (max-width:28.125em) {
+    .contact-heading{
+        font-size: 1.5rem;
+    }
+}
+.add-concern{
+position:fixed;
+z-index: +2;
+top:80vh;
+left:25rem;
+width: max-content;
+height: max-content;
+background-color:green;
+}
+@media screen and (max-width:56.25em) {
+    .add-concern{
+        position:fixed;
+        z-index: +2;
+        top:80vh;
+        left:18rem;
+        width: max-content;
+        height: max-content;
+        background-color:green;
+        }  
+}
+@media screen and (max-width:31.25em) {
+    .add-concern{
+        position:fixed;
+        z-index: +2;
+        top:80vh;
+        left:10rem;
+        width: max-content;
+        height: max-content;
+        background-color:green;
+        }  
+}
+.homepage-right{
+width:100%;
+height:100%;
+background-color:rgb(48, 47, 47);
+}
+/* End of desktop */
+
+/* Start of small screen css */
+
+@media screen and (min-width:26.25em) {
+    .overall-homepage-small-screen-section{
+   display: none;
+    }
+   }
+
+.overall-homepage-small-screen-section{
+position:relative;
+height:100vh;
+background-color: black;
+}
+.contact-heading-small{
+
+}
+.add-concern-small{
+    position:fixed;
+    z-index: +2;
+    top:80vh;
+    left:80vw;
+    width: max-content;
+    height: max-content;
+    background-color:green;
+}
+
+
+@media screen and (max-width:13.75em) {
+    .add-concern-small{
+        position:fixed;
+        z-index: +2;
+        top:80vh;
+        left:50vw;
+        width: max-content;
+        height: max-content;
+        background-color:green;
+    }
+}
+
+.add-items-form{
+    position: absolute;
+    z-index: +4;
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(15, 14, 14);
+
+    }
+    .top-div-now{
+        position: absolute;
+        z-index: +5;
+        width: 100%;
+        height: 100vh;
+
+    }
+
+    .cancel-btn{
+        position: absolute;
+        z-index: +6;
+        background-color: green; 
+        top:2rem;
+        left:50%;
+    }
+/* End of small screen css */

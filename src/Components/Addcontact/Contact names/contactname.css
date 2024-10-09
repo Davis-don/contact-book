@@ -1,0 +1,32 @@
+.ovaerall-contact-name-container{
+height: max-content;
+border-top: 1px solid rgb(43, 41, 41);
+}
+.underline-text{
+    border-bottom: 1px solid rgb(253, 253, 253);
+    width: 100%;
+    display: flex;
+flex-direction: row;
+gap: 2rem;
+padding: 1rem;
+}
+.ovaerall-contact-name-container h1{
+font-size: 2rem;
+text-align: center;
+padding: 1rem;
+}
+.content-holder-div{
+
+}
+.img-holder{
+width: 4rem;
+height: 4rem;
+background-color: white;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+.img-holder h1{
+font-size: 2rem;
+
+}
