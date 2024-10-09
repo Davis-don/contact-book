@@ -22,10 +22,18 @@ function Contactname({firstName,lastName}) {
     <div className='ovaerall-contact-name-container'>
       <div className="content-holder-div">
         <div className="underline-text">
-        <div className="img-holder rounded-circle">
+          <ul className='ul-container'>
+         <li>
+
+         <div className="img-holder rounded-circle">
       <h1>{firstUppercaseLetter(firstName)}</h1>
 </div>
-        <h1 className='text-light'>{firstName + " " + lastName}</h1>
+        <h1 className='text-light'>{firstName + " " + lastName}</h1>        
+         </li>
+          
+       
+
+        </ul>
         </div>
       
       </div>
