@@ -16,7 +16,8 @@ display: none;
 
 .homepage-left{
 width: 50rem;
-height: 100%;
+height: 100vh;
+overflow: scroll;
 background-color: black;
 padding: 2rem;
 position:relative;
