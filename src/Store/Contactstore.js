@@ -1,5 +1,5 @@
 import { create } from "zustand";
-
+import {devtools,persist} from 'zustand/middleware'
 const contactStore = (set) => ({
   contacts: [],
 
@@ -50,7 +50,8 @@ const contactStore = (set) => ({
   }
 });
 
-const useContactStore = create(contactStore);
+//const useContactStore = create(contactStore);
+const useContactStore = create(devtools(persist(contactStore,{name:'contacts' })));
 
 export default useContactStore;
 

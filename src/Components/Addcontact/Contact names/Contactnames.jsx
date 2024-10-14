@@ -5,7 +5,6 @@ import Contactname from './Contactname';
 function Contactnames() {
 
     const contacts=useContactStore((state)=>state.contacts);
-    console.log(contacts);
     
   return (
     <div className='overall-contact-names-container'>

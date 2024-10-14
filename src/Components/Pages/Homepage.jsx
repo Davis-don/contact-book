@@ -9,7 +9,9 @@ import Displaycontacts from '../Displayall/Displaycontacts';
 import useContactStore from '../../Store/Contactstore';
 
 function Homepage() {
+
   const [contact,setContact]=useState(<Addcontact/>);
+  const allContacts=useContactStore((state)=>state.contacts)
   // const getDisplayValueSetToTrue=useContactStore((state)=>state.contacts);
   // console.log(`here friend ${getDisplayValue.displayElement}`)
 
@@ -45,7 +47,7 @@ function Homepage() {
     <>
     <div className='overall-homepage-section-big-screen'>
         <div className="homepage-left">
-            <h1  style={{textAlign:'center'}} className='text-light contact-heading'>My contacts (0)</h1>
+            <h1  style={{textAlign:'center'}} className='text-light contact-heading'>My contacts ({allContacts.length})</h1>
             {/* <Contactname/> */}
             <Contactnames  className='bg-info'/>
             <div className="add-concern rounded-circle" onClick={setAllToFalseThenRunGetDisplaySetTrueFunction}>
@@ -60,7 +62,7 @@ function Homepage() {
         </div>
          
         <div className="overall-homepage-small-screen-section">
-        <h1  style={{textAlign:'center'}} className='text-light contact-heading-small'>My contacts (0)</h1>
+        <h1  style={{textAlign:'center'}} className='text-light contact-heading-small'>My contacts ({allContacts.length})</h1>
         <div className="add-concern-small rounded-circle">
               <IoAdd onClick={setAllToFalseThenRunGetDisplaySetTrueFunction}  style={{fontSize:'4rem'}} className=' text-light'/>
             </div>
