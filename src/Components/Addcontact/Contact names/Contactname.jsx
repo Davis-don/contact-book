@@ -1,13 +1,11 @@
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './contactname.css'
+import useContactStore from '../../../Store/Contactstore';
 
-
-
-function Contactname({firstName,lastName}) {
-
-
-
+function Contactname({id,firstName,lastName}) {
+  const setDisplayElementTrue=useContactStore((state)=>state.setDisplayElementTrue)
+  // const { setDisplayElementTrue } = useContactStore();
 
   function firstUppercaseLetter(str) {
     for (let i = 0; i < str.length; i++) {
@@ -15,15 +13,17 @@ function Contactname({firstName,lastName}) {
         return str[i];
       }
     }
-    return null; // return null if no uppercase letter is found
+    return null; 
   }
   
-  return (
+  return(
     <div className='ovaerall-contact-name-container'>
       <div className="content-holder-div">
         <div className="underline-text">
           <ul className='ul-container'>
-         <li>
+
+            {/* Clickable list */}
+         <li onClick={()=>setDisplayElementTrue(id)}>
 
          <div className="img-holder rounded-circle">
       <h1>{firstUppercaseLetter(firstName)}</h1>

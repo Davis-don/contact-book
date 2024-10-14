@@ -4,12 +4,42 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import { IoAdd } from "react-icons/io5";
 import Addcontact from '../Addcontact/Addcontact';
 import { useState } from 'react';
-import Contactname from '../Addcontact/Contact names/Contactname';
 import Contactnames from '../Addcontact/Contact names/Contactnames';
-
+import Displaycontacts from '../Displayall/Displaycontacts';
+import useContactStore from '../../Store/Contactstore';
 
 function Homepage() {
-  const [contact,setContact]=useState('')
+  const [contact,setContact]=useState(<Addcontact/>);
+  // const getDisplayValueSetToTrue=useContactStore((state)=>state.contacts);
+  // console.log(`here friend ${getDisplayValue.displayElement}`)
+
+  const getDisplayValueSetToTrue = useContactStore((state) => {
+    // Check if any contact has displayElement set to true
+    return state.contacts.some(contact => contact.displayElement === true);
+  });
+    
+ 
+
+
+
+  const setAllToFalseThenRunGetDisplaySetTrueFunction = () => {
+    // // First call the setAllFalse action from the store
+     useContactStore.getState().setAllFalse();
+  
+    // // Then re-run getDisplayValueSetToTrue to check if any contact's displayElement is true
+     const isAnyContactDisplayed = getDisplayValueSetToTrue;
+
+     const getDisplayValueSetToTrue=isAnyContactDisplayed
+    
+     //console.log('Is any contact displayed?', isAnyContactDisplayed);
+  
+     // If needed, you can perform further actions based on the result
+  };
+  
+
+
+
+
   
   return (
     <>
@@ -17,27 +47,28 @@ function Homepage() {
         <div className="homepage-left">
             <h1  style={{textAlign:'center'}} className='text-light contact-heading'>My contacts (0)</h1>
             {/* <Contactname/> */}
-            <Contactnames/>
-            <div className="add-concern rounded-circle" onClick={()=>setContact(<Addcontact/>)}>
+            <Contactnames  className='bg-info'/>
+            <div className="add-concern rounded-circle" onClick={setAllToFalseThenRunGetDisplaySetTrueFunction}>
               <IoAdd  style={{fontSize:'4rem'}} className=' text-light'/>
             </div>
           
         </div>
         <div className="homepage-right">
-          {contact}
+          {getDisplayValueSetToTrue ? <Displaycontacts/> : contact}
+          {/* <Displaycontacts/> */}
         </div>
         </div>
          
         <div className="overall-homepage-small-screen-section">
         <h1  style={{textAlign:'center'}} className='text-light contact-heading-small'>My contacts (0)</h1>
         <div className="add-concern-small rounded-circle">
-              <IoAdd onClick={()=>setContact(<Addcontact/>)}  style={{fontSize:'4rem'}} className=' text-light'/>
+              <IoAdd onClick={setAllToFalseThenRunGetDisplaySetTrueFunction}  style={{fontSize:'4rem'}} className=' text-light'/>
             </div>
             {contact && <div className="add-items-form">
               <div className="top-div-now">
              <Addcontact/>
              <div className="cancel-btn">
-             <button onClick={()=>setContact(false)} className='btn  text-light'>Cancel</button>
+             <button onClick={()=>setContact(true)} className='btn  text-light'>Cancel</button>
              </div>
             
               </div>
