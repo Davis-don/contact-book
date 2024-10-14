@@ -62,6 +62,15 @@ function Homepage() {
         </div>
          
         <div className="overall-homepage-small-screen-section">
+          <div className="contact-items-small-screen">
+          {getDisplayValueSetToTrue ? <Displaycontacts/> : contact}
+          </div>
+
+          <div className="add-contact-small-screen rounded-circle bg-success">
+          <IoAdd  onClick={setAllToFalseThenRunGetDisplaySetTrueFunction} style={{fontSize:'4rem'}} className=' text-light'/>
+          </div>
+
+        {/* {getDisplayValueSetToTrue ? <Displaycontacts/> : contact}
         <h1  style={{textAlign:'center'}} className='text-light contact-heading-small'>My contacts ({allContacts.length})</h1>
         <div className="add-concern-small rounded-circle">
               <IoAdd onClick={setAllToFalseThenRunGetDisplaySetTrueFunction}  style={{fontSize:'4rem'}} className=' text-light'/>
@@ -76,7 +85,7 @@ function Homepage() {
               </div>
               
             </div>
-}
+} */}
         </div>
         </>
   )
