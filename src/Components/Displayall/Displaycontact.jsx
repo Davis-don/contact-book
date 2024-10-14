@@ -1,8 +1,10 @@
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './Displaycontact.css'
+import useContactStore from '../../Store/Contactstore';
 
-function Displaycontact({fName,lName,contact}) {
+function Displaycontact({id,fName,lName,contact}) {
+  const deleteContact=useContactStore((state)=>state.deleteContact);
 
   function firstUppercaseLetter(str) {
     for (let i = 0; i < str.length; i++) {
@@ -25,7 +27,7 @@ function Displaycontact({fName,lName,contact}) {
          <h3 className='text-light'>Mobile <span className='text-info'>{contact}</span></h3>
 
          <div className="contact-stuff-btns">
-          <button className='btn btn-danger btn-lg' type='button'>Delete</button>
+          <button onClick={()=>deleteContact(id)} className='btn btn-danger btn-lg' type='button'>Delete</button>
          </div>
         </div>
         

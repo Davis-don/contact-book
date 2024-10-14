@@ -39,6 +39,15 @@ const contactStore = (set) => ({
       };
     });
   },
+
+  deleteContact:function(taskId){
+    set((state)=>{
+        const upDatedTask=state.contacts.filter((contact)=>{
+            return contact.id !==taskId;
+        })
+        return {contacts:upDatedTask};
+    })
+  }
 });
 
 const useContactStore = create(contactStore);
