@@ -27,3 +27,8 @@ font-size: 5rem;
 text-align: center;
 font-size: 3rem;
 }
+.contact-stuff-btns{
+display: flex;
+flex-direction: row;
+gap:2rem
+}

@@ -14,7 +14,7 @@ function Displaycontacts() {
   return (
     <div>
       {contactToDisplay ? (
-        <Displaycontact id={contactToDisplay.id} fName={contactToDisplay.fName} lName={contactToDisplay.lName} contact={contactToDisplay.phoneNumber} />
+        <Displaycontact isDisabled={contactToDisplay.Disabled}  id={contactToDisplay.id} fName={contactToDisplay.fName} lName={contactToDisplay.lName} contact={contactToDisplay.phoneNumber} />
       ) : (
         <p>No contact selected for display</p>
       )}

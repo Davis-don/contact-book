@@ -20,6 +20,36 @@ const contactStore = (set) => ({
     }));
   },
 
+
+  setDisable: (id) => {
+    set((state) => {
+      const updatedContacts = state.contacts.map((currentContact) => {
+        if (currentContact.id === id) {
+          // Return a new object with 'Disabled' set to true
+          return { ...currentContact, Disabled: true };
+        }
+        // Return the contact as is if the id doesn't match
+        return currentContact;
+      });
+      
+      // Return the updated state with modified contacts array
+      return { contacts: updatedContacts };
+    });
+  },
+
+  setEnable:(id)=>{
+    set((state)=>{
+        const setEnableNow=state.contacts.map((currentContact)=>{
+            if(currentContact.id === id){
+            currentContact.Disabled= false;
+            return currentContact;
+            }
+            return currentContact;
+        })
+        return {contacts:setEnableNow};
+    })
+  },
+  
   // Function to set one contact's displayElement to true
   setDisplayElementTrue: (id) => {
     // Call setAllFalse from within the set function

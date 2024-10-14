@@ -12,6 +12,7 @@ function Addcontact() {
     emailAdress: '',
     phoneNumber: '',
     displayElement: false,
+    Disabled:false
   });
 
   let handleUpdate = (e) => {
@@ -34,6 +35,7 @@ function Addcontact() {
       emailAdress: '',
       phoneNumber: '',
       displayElement: false,
+      Disabled:false
     }); 
   };
 
