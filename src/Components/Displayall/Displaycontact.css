@@ -1,0 +1,26 @@
+.overall-display-contact-container{
+
+}
+.top-initial-holder{
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+.circular-icon-container{
+width: 20rem;
+height: 20rem;
+background-color: white;
+display: flex;
+justify-content: center;
+align-items: center;
+font-size: 5rem;
+
+}
+.display-contact-heading{
+text-align: center;
+font-size: 3rem;
+}
